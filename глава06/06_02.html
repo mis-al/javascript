@@ -20,10 +20,30 @@
         }
     </style>
     <script src="../_js/jquery.min.js"></script>
-
+    <script src="../_js/jquery-ui.js"></script>
     <script>
         $(document).ready(function () {
-
+            $('#dashboard').hover(
+                    function () {
+                        console.log('mouseEnter')
+                        $(this).stop().animate({
+                                    left: '0',
+                                    backgroundColor: 'rgb(26,45,94)'
+                                },
+                                500,
+                                'easeInSine');
+                    },
+                    function () {
+                        console.log('mouseOver')
+                        $(this).stop().animate({
+                            left: '-92px',
+                            backgroundColor: 'rgb(2455,211,224)'
+                        },
+                                1500,
+                                'easeOutBounce'
+                        )
+                    }
+            );
         }); // end ready
     </script>
 </head>
